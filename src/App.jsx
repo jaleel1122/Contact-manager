@@ -4,6 +4,7 @@ import Addcontacts from './components/Addcontacts'
 import Contactlist from './components/Contactlist'
 
 const App = () => {
+  console.log('hi git')
   const [contacts,setcontacts] = useState([])
 
   function addcontactshandler(contact){
