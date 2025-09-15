@@ -78,69 +78,101 @@ const Addcontacts = ({addcontactshandler}) => {
 
     return (
         <>
-            <div className="flex justify-center mt-10">
-                <fieldset className="fieldset bg-base-200 border-base-400 rounded-box w-full max-w-xl border p-6">
-                    <legend className="fieldset-legend text-3xl text-center">Add Contacts</legend>
-                    <div className="mx-auto">
-                        <div className="form-control mb-3">
-                            <label className="label p-1">Name :</label>
+            <div className="flex justify-center px-4 mt-6 mb-10 ">
+<fieldset
+  className="bg-green-100 fieldset bg-base-100 
+             rounded-3xl  /* ⬅️ super curvy corners */
+             w-full max-w-xl 
+             border border-base-200/70 
+             shadow-sm transition-colors"
+>
+<legend
+  className="fieldset-legend text-2xl md:text-5xl font-extrabold text-center 
+             text-gray-900 drop-shado-[0_2px_4px_rgba(0,0,0,0.5)]
+             tracking-wide"
+>
+  Add Contact
+</legend>
+                    <div className="mx-auto p-5 md:p-6">
+                        <div className="form-control mb-4">
+                            <label className="label p-1 text-sm font-medium">Name</label>
                             <input 
                                 type="text" 
-                                className="input input-bordered" 
-                                placeholder="Name" 
+                                className="input input-bordered w-full pl-4 pr-12 py-3 rounded-xl text-sm bg-white/70 text-gray-800 
+                 placeholder-gray-500 border border-transparent 
+                 focus:outline-none focus:ring-2 focus:ring-green-900/70
+                 shadow-sm backdrop-blur-sm transition-all duration-300
+                 hover:bg-white/80 focus:bg-white"
+                                placeholder="Enter full name" 
                                 onChange={(e) => setINformation({...information, name: e.target.value})} 
                                 value={information.name} 
                             />
                         </div>
 
-                        <div className="form-control mb-3">
-                            <label className="label p-1">E-mail :</label>
+                        <div className="form-control mb-4">
+                            <label className="label p-1 text-sm font-medium">Email</label>
                             <input 
-                                type="text" 
-                                className="input input-bordered" 
-                                placeholder="E-mail"
+                                type="email" 
+                                className="input input-bordered w-full pl-4 pr-12 py-3 rounded-xl text-sm bg-white/70 text-gray-800 
+                 placeholder-gray-500 border border-transparent 
+                 focus:outline-none focus:ring-2 focus:ring-green-900/70
+                 shadow-sm backdrop-blur-sm transition-all duration-300
+                 hover:bg-white/80 focus:bg-white" 
+                                placeholder="name@example.com"
                                 onChange={(e) => setINformation({...information, email: e.target.value})} 
                                 value={information.email} 
                             />
                         </div>
 
-                        <div className="form-control mb-3">
-                            <label className="label p-1">P.NO :</label>
+                        <div className="form-control mb-4">
+                            <label className="label p-1 text-sm font-medium">Phone</label>
                             <input 
-                                type="text" 
-                                className="input input-bordered" 
-                                placeholder="Phone Number"
+                                type="tel" 
+                                className="input input-bordered w-full pl-4 pr-12 py-3 rounded-xl text-sm bg-white/70 text-gray-800 
+                 placeholder-gray-500 border border-transparent 
+                 focus:outline-none focus:ring-2 focus:ring-green-900/70
+                 shadow-sm backdrop-blur-sm transition-all duration-300
+                 hover:bg-white/80 focus:bg-white" 
+                                placeholder="e.g. +1 555 123 4567"
                                 onChange={(e) => setINformation({...information, phone: e.target.value})} 
                                 value={information.phone} 
                             />
                         </div>
 
                         {/* Image Section */}
-                        <div className="form-control mb-3">
-                            <label className="label p-1">Image :</label>
+                        <div className="form-control mb-4">
+                            <label className="label p-1 text-sm font-medium">Image</label>
                             
                             {/* Image URL Input */}
                             <input 
                                 type="url" 
-                                className="input input-bordered mb-2" 
+                                className="input input-bordered mb-2 w-full pl-4 pr-12 py-3 rounded-xl text-sm bg-white/70 text-gray-800 
+                 placeholder-gray-500 border border-transparent 
+                 focus:outline-none focus:ring-2 focus:ring-green-900/70
+                 shadow-sm backdrop-blur-sm transition-all duration-300
+                 hover:bg-white/80 focus:bg-white" 
                                 placeholder="Image URL (optional)"
                                 onChange={handleImageUrlChange}
                                 value={information.image}
                             />
                             
                             {/* File Upload */}
-                            <div className="flex items-center gap-2 mb-2">
+                            <div className="flex items-center gap-2 mb-2 w-full pl-4 pr-12 py-3 rounded-xl text-sm bg-white/70 text-gray-800 
+                 placeholder-gray-500 border border-transparent 
+                 focus:outline-none focus:ring-2 focus:ring-green-900/70
+                 shadow-sm backdrop-blur-sm transition-all duration-300
+                 hover:bg-white/80 focus:bg-white">
                                 <input 
                                     type="file" 
                                     accept="image/*"
                                     onChange={handleFileUpload}
-                                    className="file-input file-input-bordered file-input-sm w-full"
+                                    className="file-input file-input-bordered file-input-sm w-full bg-transparent border-none"
                                 />
                             </div>
 
                             {/* Image Preview */}
                             {imagePreview && (
-                                <div className="flex items-center gap-2 mb-2">
+                                <div className="flex items-center gap-3 mb-2">
                                     <img 
                                         src={imagePreview} 
                                         alt="Preview" 
@@ -157,8 +189,15 @@ const Addcontacts = ({addcontactshandler}) => {
                             )}
                         </div>
 
-                        <div className="flex justify-center mt-4">
-                            <button className="btn btn-primary btn-wide" onClick={handleAdd}>Add</button>
+                        <div className="flex gap-3 justify-center mt-2">
+                            <button className="btn w-full relative overflow-hidden rounded-xl 
+                         bg-gradient-to-r from-lime-900 to-lime-900 
+                         text-white font-semibold
+                         px-5 py-2 md:px-6 md:py-2.5 shadow-md backdrop-blur-sm
+                         hover:from-lime-400 hover:to-emerald-500 hover:text-white
+                         hover:shadow-xl hover:-translate-y-0.5 
+                         transition-all duration-300" onClick={handleAdd}>Add</button>
+                            {/* <button className="btn btn-ghost" type="button" onClick={() => setINformation({ name: '', email: '', phone: '', image: '' })}>Clear</button> */}
                         </div>
                     </div>
                 </fieldset>

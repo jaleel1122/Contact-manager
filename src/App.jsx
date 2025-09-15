@@ -74,12 +74,15 @@ const App = () => {
   return (
     <>
     <Header/>
-    <Routes>
+    <div className="p-2">
+      <Routes id='#forpadding'>
       <Route path="/" element={<Contactlist contacts={contacts} deleteContact={deleteContact} updateContact={updateContact}/>} />
       <Route path="/addcontacts" element={<Addcontacts addcontactshandler={addcontactshandler}/>} />
       <Route path='/contact/:id' element={<ContactDetails contacts={contacts}/>}/>
       <Route path='/edit/:id' element={<EditContact contacts={contacts} updateContact={updateContact}/>} />
     </Routes>
+    </div>
+    
     </>
   )
 }

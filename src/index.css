@@ -1,2 +1,23 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+@layer base {
+  html { 
+    scroll-behavior: smooth; 
+    height: 100%;
+  }
+  body { 
+    @apply bg-base-200 text-base-content antialiased;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .list { @apply divide-y divide-base-200; }
+  .list-row { @apply px-4 py-3 gap-3 sm:gap-4; }
+}
